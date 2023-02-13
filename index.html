@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | E-commerce product page</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <nav class="navbar">
+    <img src="./images/logo.svg" />
+    <ul class="list-box">
+      <li class="list-item">Collections</li>
+      <li class="list-item">Men</li>
+      <li class="list-item">Women</li>
+      <li class="list-item">About</li>
+      <li class="list-item">Contact</li>
+    </ul>
+    <div class="icons">
+      <img class="trolley-nav" src="./images/icon-cart.svg" alt="cart-icon"/>
+      <img class="avatar-nav"src="./images/image-avatar.png" alt="avatar"/>
+    </div>
+  </nav>
+  <main>
+    <div class="img-box">
+      <img class="main-img" src="./images/image-product-1.jpg" alt="pair of sneakers"/>
+      <div class="thumbnails">
+        <img class="thumbnail-img" src="./images/image-product-1-thumbnail.jpg" alt="pair of sneakers thumbnail"/>
+        <img class="thumbnail-img" src="./images/image-product-2-thumbnail.jpg" alt="sneakers on a stone thumbnail"/>
+        <img class="thumbnail-img" src="./images/image-product-3-thumbnail.jpg" alt="One sneaker on top of stone frontview thumbnail"/>
+        <img class="thumbnail-img" src="./images/image-product-4-thumbnail.jpg" alt="One sneaker on top of stone sideview thumbnail"/>
+      </div>
+    </div>
+    <div class="info-box">
+      <h3 class="info-title">Sneaker Company</h3>
+      <h1 class="info-header"> Fall Limited Edition Sneakers</h1>
+      <p class="info-details">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+        durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+      <div class="price-discount">
+        <h3 class="current-price">$125.00</h3>
+        <div class="discount">50%</div>
+      </div>
+      <h3 class="old-price">$250.00</h3>
+      <div class="price-box">
+        <div class="item-add-minus">
+          <img class="minus" src="./images/icon-minus.svg" />
+          <h5>0</h5>
+          <img class="plus" src="./images/icon-plus.svg" />
+        </div>
+        <button type="submit" class="add-btn"><img class="add-cart-icon" src="./images/icon-cart.svg"/>Add to cart</button>
+      </div>
+  </div>
+  </main>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </footer>
+  <script src="index.js"></script>
+</body>
+</html>

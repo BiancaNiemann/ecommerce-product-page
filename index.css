@@ -1,0 +1,183 @@
+body{
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/*NAVBAR STYLING*/
+.navbar,
+.list-box,
+.icons,
+.thumbnails,
+main,
+.info-box,
+.price-box,
+.price-discount,
+.item-add-minus{
+    display: flex;
+}
+
+.navbar,
+.icons,
+.price-discount{
+    align-items: center;
+}
+
+.list-box, 
+.info-details,
+.old-price{
+    color: hsl(219, 9%, 45%);
+}
+
+.navbar{
+    width: 100%;
+    border-bottom: 2px solid hsl(0, 10%, 94%);
+    height: 100px;
+}
+
+.list-box{
+    list-style: none;
+    width: 500px;
+    justify-content: space-around;
+}
+
+.list-item,
+.avatar-nav,
+.trolley-nav,
+.minus,
+.plus{
+    cursor: pointer;
+}
+
+.list-item{
+    line-height: 100px;
+}
+
+.list-item:hover{
+    border-bottom: 3px solid hsl(26, 100%, 55%);
+}
+
+.icons{
+    margin-left: auto;
+}
+
+.avatar-nav{
+    width: 50px;
+    height: 50px;
+    margin-left: 35px;
+}
+
+.avatar-nav:hover{
+    border: 2px solid hsl(26, 100%, 55%);
+    border-radius: 50%;
+}
+
+/*MAIN PART OF PAGE*/
+
+main{
+    padding: 100px 50px 100px 50px;
+}
+.main-img{
+    width: 400px;
+    border-radius: 15px;
+}
+
+.thumbnails{
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.thumbnail-img{
+    width: 75px;
+    border-radius: 10px;
+}
+
+.info-box{
+    margin-left: 100px;
+    margin-top: 40px;
+    flex-direction: column;
+}
+
+.info-title{
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+}
+
+.info-title, .discount{
+    color: hsl(26, 100%, 55%);
+}
+
+.info-header{
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: hsl(220, 13%, 13%);
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.info-details{
+    font-weight: 400;
+    font-size: 0.85rem;
+}
+
+.price-discount{
+    height: 50px;
+    padding-top: 10px
+}
+
+.current-price{
+    font-size: 1.75rem;
+}
+
+.discount{
+    background-color: hsl(25, 100%, 94%);
+    padding: 4px;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.old-price{
+    margin-top: 0;
+    text-decoration: line-through;
+}
+
+.price-box{
+    height: 55px;
+}
+
+.item-add-minus{
+    background-color: hsl(223, 64%, 98%);
+    width: 150px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.old-price,
+h5{
+    font-size: 1rem;
+}
+
+.add-btn{
+    background-color: hsl(26, 100%, 55%);
+    border: none;
+    border-radius: 6px;
+    width: 250px;
+    font-weight: 700;
+}
+
+.add-btn,
+.add-cart-icon{
+    color: white;
+}
+
+.add-cart-icon{
+    padding-right: 15px;
+    width: 15px;
+}
+
+
