@@ -46,7 +46,9 @@ main,
 .avatar-nav,
 .trolley-nav,
 .minus,
-.plus{
+.plus, 
+.add-btn,
+.thumbnail-img{
     cursor: pointer;
 }
 
@@ -91,6 +93,10 @@ main{
 .thumbnail-img{
     width: 75px;
     border-radius: 10px;
+}
+
+.thumbnail-img:hover{
+    opacity: 0.5;
 }
 
 .info-box{
@@ -155,6 +161,7 @@ main{
     width: 150px;
     justify-content: space-around;
     align-items: center;
+    border-radius: 7px;
 }
 
 .old-price,
@@ -165,9 +172,10 @@ h5{
 .add-btn{
     background-color: hsl(26, 100%, 55%);
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     width: 250px;
     font-weight: 700;
+    margin-left: 20px;
 }
 
 .add-btn,
@@ -178,6 +186,11 @@ h5{
 .add-cart-icon{
     padding-right: 15px;
     width: 15px;
+}
+
+footer{
+    text-align: center;
+    font-size: 0.5rem;
 }
 
 
