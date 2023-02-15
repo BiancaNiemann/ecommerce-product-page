@@ -8,17 +8,18 @@ const currentPrice = document.getElementById('current-price').innerHTML
 const addBtn = document.getElementById('add-btn')
 const trolleyBox = document.getElementById('trolley-box')
 const numberItems = document.getElementById('number-items')
-const body = document.querySelector('body')
-//const main = document.querySelector('main')
-//const footer = document.querySelector('footer')
-const infoDetails = document.querySelector('.info-details')
+const lightBox = document.createElement('div')
+const slides = document.getElementsByClassName('slide')
+
 
 let totalValue = parseInt(total.innerHTML)
-let addedToCart = false;
-let trolleyOpen = false;
+let addedToCart = false
+let trolleyOpen = false
+let slideIndex = 1
 
-// Switch the large product image by clicking on the small thumbnail images & give selected img a border and greyed out effect
+// Switch the large product image by clicking on the small thumbnail images & give selected thumbnail img a border and greyed out effect
 
+// removes clicked class from all thumbnail imgs
 function clearClick(){
     thumbnailImg.forEach(img => {
         img.classList.remove('clicked')
@@ -26,48 +27,80 @@ function clearClick(){
 }
 
 thumbnailImg.forEach(img => {  
-    img.addEventListener('click', ()=> {
-        clearClick()
-        let imgNum = img.dataset.ref
-        mainImg.src = `./images/image-product-${imgNum}.jpg`
-        img.classList.add('clicked')
-    })
-    
-})
+    img.addEventListener('click', ()=> )
 
 //Add lightbox for images
 mainImg.addEventListener('click', lightBoxOn)
 
 function lightBoxOn(){
-    //nav.classList.add('blackout')
-    //main.classList.add('blackout')
-    body.classList.add('blackout')
-    infoDetails.classList.add('blackout')
-    const lightBox = document.createElement('div')
     document.body.appendChild(lightBox)
+    
     lightBox.innerHTML = `
         <div class="img-box-light">
             <div class="lightbox">
-                <img class="close-icon" src="./images/icon-close.svg" />
-                <img class="arrow-icon prev" src="./images/icon-previous.svg" />
-                <img id="main-img" class="main-img main-light" src="./images/image-product-1.jpg" alt="pair of sneakers"/>
-                <img class="arrow-icon next" src="./images/icon-next.svg" />
+                <img class="close-icon" src="./images/icon-close.svg" onclick="lightBoxOff()"/>
+                <img class="arrow-icon prev" src="./images/icon-previous.svg" onClick="changeSlide(-1)"/>
+
+                <div class="slide">
+                    <img class="main-img main-light" src="./images/image-product-1.jpg" alt="pair of sneakers"/>
+                </div>
+                <div class="slide">
+                    <img class="main-img main-light" src="./images/image-product-2.jpg" alt="pair of sneakers"/>
+                </div>
+                <div class="slide">
+                    <img class="main-img main-light" src="./images/image-product-3.jpg" alt="pair of sneakers"/>
+                </div>
+                <div class="slide">
+                    <img class="main-img main-light" src="./images/image-product-4.jpg" alt="pair of sneakers"/>
+                </div>
+
+                <img class="arrow-icon next" src="./images/icon-next.svg" onClick="changeSlide(1)"/>
+                
                 <div class="thumbnails light">
-                    <img class="thumbnail-img" src="./images/image-product-1-thumbnail.jpg" alt="pair of sneakers thumbnail" data-ref=1 />
-                    <img class="thumbnail-img" src="./images/image-product-2-thumbnail.jpg" alt="sneakers on a stone thumbnail" data-ref=2 />
-                    <img class="thumbnail-img" src="./images/image-product-3-thumbnail.jpg" alt="One sneaker on top of stone frontview thumbnail" data-ref=3 />
-                    <img class="thumbnail-img" src="./images/image-product-4-thumbnail.jpg" alt="One sneaker on top of stone sideview thumbnail" data-ref=4 />
+                        <img class="thumbnail-img modal-thumb" src="./images/image-product-1.jpg" />
+                        <img class="thumbnail-img modal-thumb" src="./images/image-product-2.jpg" />
+                        <img class="thumbnail-img modal-thumb" src="./images/image-product-3.jpg" />
+                        <img class="thumbnail-img modal-thumb" src="./images/image-product-4.jpg" />
                 </div>
             </div>
         </div>
     `
+    slides[slideIndex - 1].style.display = 'block'
+}
+
+function showSlide(n){
+    const modalThumb = document.querySelectorAll('.modal-thumb')
+
+    modalThumb.forEach(img => {
+        img.classList.remove('clicked')
+    })
+    
+
+    if (n > slides.length){
+        slideIndex = 1
+    }
+
+    if (n < 1){
+        slideIndex = slides.length
+    }
+
+    for (let i = 0; i < slides.length; i++){
+        slides[i].style.display = "none"
+    }
+
+    slides[slideIndex - 1].style.display = 'block'
+
+
+    modalThumb[slideIndex - 1].classList.add('clicked')
+
+}
+
+function changeSlide(input){
+    showSlide(slideIndex += input)
 }
 
 function lightBoxOff(){
-    nav.classList.remove('blackout')
-    main.classList.remove('blackout')
-    footer.classList.remove('blackout')
-    infoDetails.classList.remove('blackout')
+    document.body.removeChild(lightBox)
 }
 
 //Add or minus items on main page and update total rendered to screen

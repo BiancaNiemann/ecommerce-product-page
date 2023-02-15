@@ -327,7 +327,7 @@ footer{
     align-items: center;
     padding-top: 70px;
     z-index: 1000;
-    height: 100vh;
+    height: 1000px;
     background-color: rgba(10, 10, 10, 0.767);
 }
 
@@ -368,5 +368,9 @@ footer{
 .next{
     right: -40px;
     top: 280px;
+}
+
+.slide{
+    display: none;
 }
 
