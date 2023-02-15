@@ -26,12 +26,21 @@ function clearClick(){
     })
 }
 
+// adds class of clicked to the thumbnail (orange border and opacity)
 thumbnailImg.forEach(img => {  
-    img.addEventListener('click', ()=> )
+    img.addEventListener('click', ()=> {
+        clearClick()
+        let imgNum = img.dataset.ref
+        mainImg.src = `./images/image-product-${imgNum}.jpg`
+        img.classList.add('clicked')
+    })
+    
+})
 
-//Add lightbox for images
+//Renders lightbox to screen
 mainImg.addEventListener('click', lightBoxOn)
 
+//the html code to render, gets created above and then appended to orginal body
 function lightBoxOn(){
     document.body.appendChild(lightBox)
     
@@ -65,9 +74,12 @@ function lightBoxOn(){
             </div>
         </div>
     `
+    //Will render the image selected on main screen to show as starting image in lightbox
     slides[slideIndex - 1].style.display = 'block'
 }
 
+//Fetches all thumbnail images and adds clicked class to them so shows which image is apprearing as main image
+//Also calculates which image should show using the next and previous arrows
 function showSlide(n){
     const modalThumb = document.querySelectorAll('.modal-thumb')
 
@@ -95,20 +107,23 @@ function showSlide(n){
 
 }
 
+//uses arrow keys to see if next (+1) or prev(-1)and then sets as arguments for the showslide function
 function changeSlide(input){
     showSlide(slideIndex += input)
 }
 
+//closes the lightbox
 function lightBoxOff(){
     document.body.removeChild(lightBox)
 }
 
-//Add or minus items on main page and update total rendered to screen
+//Adds items on main page and update total rendered to screen
 plus.addEventListener('click', ()=> {
     totalValue += 1
     total.innerHTML = totalValue
 })
 
+//minusses items on main page and update total rendered to screen
 minus.addEventListener('click', ()=> {  
     if(totalValue > 0){
         totalValue -= 1
@@ -122,6 +137,7 @@ addBtn.addEventListener('click', ()=> {
     showNums()
 })
 
+//Adds the items to the cart and rerenders the trolley html to show the order
 function addToCart(){
     addedToCart = true
     if (trolleyOpen){
@@ -143,6 +159,7 @@ function showNums(){
     }
 }
 
+//will listen for click on shopping trolley and use function to open on screen
 trolleyNav.addEventListener('click', openTrolley)
 
 //changes display in css to block so troleey box shows on screen and renders the correct html depending on if anything added to cart
