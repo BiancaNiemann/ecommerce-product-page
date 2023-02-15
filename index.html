@@ -12,9 +12,20 @@
   <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-  <section id="full-page">
+  <section>
     <nav class="navbar">
-      <img src="./images/logo.svg" />
+      <img id="hamburger" class="hamburger" src="./images/icon-menu.svg" />
+      <div class="side-menu" id="side-menu">
+        <ul class="side-list">
+          <img class="x" id="x" src="./images/icon-close.svg"/>
+          <li class="side-item">Collections</li>
+          <li class="side-item">Men</li>
+          <li class="side-item">Women</li>
+          <li class="side-item">About</li>
+          <li class="side-item">Contact</li>
+        </ul>
+      </div>
+      <img class="logo" src="./images/logo.svg" />
       <ul class="list-box">
         <li class="list-item">Collections</li>
         <li class="list-item">Men</li>
@@ -30,7 +41,9 @@
       <div id="number-items"></div>
     </nav>
     <main>
-      <div class="img-box">
+      <div>
+        <img id="arrow-prev" src="./images/icon-previous.svg" class="arrow-icon mobile-prev" data-key="-1"/>
+        <img id="arrow-next" src="./images/icon-next.svg" class="arrow-icon mobile-next" data-key="1"/>
         <img id="main-img" class="main-img" src="./images/image-product-1.jpg" alt="pair of sneakers"/>
         <div class="thumbnails">
           <img class="thumbnail-img" src="./images/image-product-1-thumbnail.jpg" alt="pair of sneakers thumbnail" data-ref=1 />
@@ -44,18 +57,20 @@
         <h1 class="info-header"> Fall Limited Edition Sneakers</h1>
         <p class="info-details">These low-profile sneakers are your perfect casual wear companion. Featuring a 
           durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
-        <div class="price-discount">
-          <h3 class="current-price">$<span id="current-price">125.00</span></h3>
-          <div class="discount">50%</div>
+        <div class="price"/>
+          <div class="price-discount">
+            <h3 class="current-price">$<span id="current-price">125.00</span></h3>
+            <div class="discount">50%</div>
+          </div>
+          <h3 class="old-price">$250.00</h3>
         </div>
-        <h3 class="old-price">$250.00</h3>
         <div class="price-box">
           <div class="item-add-minus">
             <img  id="minus" class="minus" src="./images/icon-minus.svg" />
             <h5 id="total">0</h5>
             <img id="plus" class="plus" src="./images/icon-plus.svg" />
           </div>
-          <button id="add-btn" class="add-btn"><img class="add-cart-icon" src="./images/icon-cart.svg"/>Add to cart</button>
+          <button id="add-btn" class="add-btn"><img class="add-cart-icon" src="./images/icon-cart-white.svg"/>Add to cart</button>
         </div>
     </div>
     </main>

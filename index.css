@@ -10,6 +10,9 @@ section{
 }
 
 /*NAVBAR STYLING*/
+.hamburger{
+    display: none;
+}
 
 .navbar,
 .list-box,
@@ -58,7 +61,8 @@ main,
     border-bottom: 2px solid hsl(0, 10%, 94%);
 }
 
-.list-box{
+.list-box,
+.side-item{
     list-style: none;
     width: 500px;
 }
@@ -96,6 +100,7 @@ main,
 
 .avatar-nav{
     margin-left: 35px;
+    height: 50px;
 }
 
 .trolly-img{
@@ -116,7 +121,8 @@ main,
 .trolley-box,
 .nums,
 .img-box-light,
-.arrow-icon {
+.arrow-icon,
+.side-menu {
     position: absolute;
 }
 
@@ -231,7 +237,7 @@ footer,
     width: 20px;
     height: 12px;
     top: 27px;
-    right: 125px;
+    right: 78px;
     border-radius: 45%;
     font-size: 0.65rem;
 }
@@ -243,7 +249,10 @@ footer,
 }
 
 /*MAIN PART OF PAGE*/
-
+.mobile-prev,
+.mobile-next{
+    display: none;
+}
 main{
     padding: 90px 50px 100px 50px;
 }
@@ -351,7 +360,6 @@ h5,
 }
 
 .add-btn,
-.add-cart-icon,
 .checkout,
 .nums{
     color: white;
@@ -359,7 +367,7 @@ h5,
 
 .add-cart-icon{
     padding-right: 15px;
-    width: 18px;
+    width: 20px;
 }
 
 /*FOOTER SECTION*/
@@ -411,3 +419,237 @@ footer{
     top: 280px;
 }
 
+/*OPEN SIDE MENU ON HAMBURGER CLICK*/
+.side-greyout{
+    background-color: rgba(10, 10, 10, 0.767);
+    z-index: 2;
+}
+
+.side-menu{
+    display: none;
+    top: 0;
+    background-color: white;
+    width: 65%;
+    height: 2300px;
+    padding: 20px;
+    box-shadow:0 0 0 1000px rgba(10, 10, 10, 0.767) ;
+}
+
+.x{
+    height: 35px;
+    margin-bottom: 80px;
+    margin-top: 35px;
+}
+
+.side-item{
+    font-size: 2.75rem;
+    font-weight: 700;
+    line-height: 250%;
+}
+
+/*MEDIA QUERIES*/
+
+@media (max-width: 375px) {
+    /*NAV BAR*/
+    .navbar{
+        height: 200px;
+    }
+
+    .hamburger{
+        display: block;
+        padding-left: 50px;
+        padding-right: 50px;
+        height: 50px;
+    }
+
+    .logo{
+        height: 3.5em;
+    }
+
+    .list-box{
+        display: none;
+    }
+
+    .avatar-nav{
+        padding-right: 50px;
+        height: 5em;
+    }
+
+    .trolley-nav{
+        height: 4em;
+        padding-right: 40px;
+    }
+
+    .nums{
+        width: 60px;
+        height: 42px;
+        font-size: 2rem;
+        right: 190px;
+    }
+
+    .trolley-box{
+        width: 90%;
+        right: 5%;
+        top: 240px;
+        height: 600px;
+        border-radius: 30px;
+    }
+
+    .cart{
+        font-size: 3rem;
+        margin-left: 80px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .empty{
+        font-size: 3rem;
+        margin-top: 170px;
+    }
+
+    .trolly-img{
+        height: 140px;
+        width: 140px;
+        border-radius: 15px;
+    }
+
+    .ordered{
+        font-size: 2.55rem;
+        font-weight: 400;
+        line-height: 160%;
+    }
+
+    .delete-icon{
+        width: 40px;
+        padding-left: 10px;
+    }
+
+    .checkout{
+        width: 90%;
+        font-size: 2.75rem;
+        height: 150px;
+        border-radius: 20px;
+        margin-left: 50px;
+        margin-top: 50px;
+    }
+    /*MAIN*/
+    .mobile-prev,
+    .mobile-next{
+        display: block;
+    }
+    main{
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .thumbnails{
+        display: none;
+    }
+
+    .main-img{
+        width: 100%;
+        border-radius: 0px;
+        height: 780px;
+    }
+
+    .arrow-icon{
+        top: 540px;
+        padding: 40px;
+        height: 40px;
+        width: 40px;
+    }
+
+    .mobile-prev{
+        left: 40px
+    }
+
+    .mobile-next{
+        right: -600px
+    }
+
+    .img-box-light{
+        display: none;
+    }
+
+    .info-title{
+        font-size: 2.25rem;
+        margin-top: 0;
+    }
+
+    .info-box{
+        margin-right: 50px;
+        min-height: 1200px;
+    }
+
+    .info-header{
+        font-size: 5rem;
+    }
+
+    .info-details{
+        font-size: 2.55rem;
+        line-height: 150%;
+    }
+
+    .price{
+        margin-top: 40px;
+        display: flex;
+        margin-bottom: 40px;;
+    }
+
+    .current-price{
+        font-size: 4.5rem;
+    }
+
+    .discount{
+        font-size: 3rem;
+        margin-left: 50px
+    }
+
+    .old-price{
+        margin-top: 5px;
+        font-size: 3rem;
+        padding-right: 10px;
+        margin-left: auto;
+    }
+
+    .price-box{
+        flex-direction: column;
+    }
+
+    .item-add-minus{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .minus{
+        height: 10px;
+    }
+
+    .plus{
+        height: 30px;
+    }
+
+    h5{
+        font-size: 3rem;
+        margin: 30px;
+    }
+
+    .add-btn{
+        width: 100%;
+        margin-left: 0;
+        font-size: 3rem;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .add-cart-icon{
+        width: 50px;
+        padding-right: 50px;
+    }
+    
+    footer{
+        font-size: 1rem;
+        padding-bottom: 20px;
+    }
+
+}

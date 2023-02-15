@@ -19,11 +19,11 @@ You can use any tools you like to help you complete the challenge. So if you've 
 Your users should be able to:
 
 - View the optimal layout for the site depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Open a lightbox gallery by clicking on the large product image
-- Switch the large product image by clicking on the small thumbnail images (done)
-- Add items to the cart
-- View the cart and remove items from it
+- See hover states for all interactive elements on the page - DONE
+- Open a lightbox gallery by clicking on the large product image - DONE
+- Switch the large product image by clicking on the small thumbnail images - DONE
+- Add items to the cart - DONE
+- View the cart and remove items from it - DONE
 
 Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
 

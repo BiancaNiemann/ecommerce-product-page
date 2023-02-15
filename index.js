@@ -10,6 +10,11 @@ const trolleyBox = document.getElementById('trolley-box')
 const numberItems = document.getElementById('number-items')
 const lightBox = document.createElement('div')
 const slides = document.getElementsByClassName('slide')
+const hamburger = document.getElementById('hamburger')
+const sideMenu = document.getElementById('side-menu')
+const x = document.getElementById('x')
+const arrowPrev = document.getElementById('arrow-prev')
+const arrowNext = document.getElementById('arrow-next')
 
 
 let totalValue = parseInt(total.innerHTML)
@@ -47,7 +52,7 @@ function lightBoxOn(){
     lightBox.innerHTML = `
         <div class="img-box-light">
             <div class="lightbox">
-                <img class="close-icon" src="./images/icon-close.svg" onclick="lightBoxOff()"/>
+                <img class="close-icon" src="./images/icon-close-white.svg" onclick="lightBoxOff()"/>
                 <img class="arrow-icon prev" src="./images/icon-previous.svg" onClick="changeSlide(-1)"/>
 
                 <div class="slide">
@@ -207,5 +212,17 @@ function renderTrolleyHtml(){
     trolleyBox.innerHTML = html
 }
 
+hamburger.addEventListener('click', openSideMenu)
+x.addEventListener('click', closeSideMenu)
+
+function openSideMenu(){
+    sideMenu.style.display = "block"
+    hamburger.style.display ="none"
+}
+
+function closeSideMenu(){
+    sideMenu.style.display = "none"
+    hamburger.style.display = "block"
+}
 
 
